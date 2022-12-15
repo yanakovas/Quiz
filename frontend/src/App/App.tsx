@@ -1,26 +1,28 @@
-import { useEffect, useReducer } from 'react';
+import { useEffect} from 'react';
 import { useDispatch } from 'react-redux';
-import AppContext from './AppContext';
+
 import { Route, Routes } from 'react-router-dom';
 import HomePage from '../features/homePage/HomePage';
 import GamePage from '../features/game/GamePage/GamePage';
 import LoginPage from '../features/auth/LoginPage';
-
+import { loadQuizes } from '../features/game/api';
+import { loadQuizesSuccess } from '../features/actionCreators';
 
 function App(): JSX.Element {
-  
-   // централизованный стэйт
-   const [state, dispatch] = useReducer(suggestionsReducer, { suggestions: [] });//-------------------
+  const dispatch = useDispatch();
 
+  useEffect(() => {
+    loadQuizes().then((data) => {
+      dispatch(loadQuizesSuccess(data));
+    });
+  }, []);
   return (
-      <AppContext.Provider value={{state,dispatch}}>
-        <Routes>
-          <Route path='/' element={<HomePage/>}/>          
-          <Route path='/game' element={<GamePage/>}/>
-          <Route path='/login' element={<LoginPage/>}/>
-        </Routes>
-      </AppContext.Provider>
-  )
+    <Routes>
+      <Route path='/' element={<HomePage />} />
+      <Route path='/game' element={<GamePage />} />
+      <Route path='/login' element={<LoginPage />} />
+    </Routes>
+  );
 }
 
 export default App;

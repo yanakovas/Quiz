@@ -4,3 +4,6 @@ import Quiz from "./Quiz";
     payload:Quiz[];
  }
  export default QuizesAction
+
+
+ //типизация дейсвия со стейтом

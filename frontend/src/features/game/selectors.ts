@@ -1,7 +1,11 @@
 // в этом файле мы указываем функции, которые достают данные из стэйта
 
 import { RootState } from '../../store';
-import Suggestion from './types/Suggestion';
+import Quiz from './types/Quiz';
 
-export const selectSuggestions = (state: RootState): Suggestion[] =>
-  state.suggestions.suggestions;
+export const selectQuizes = (state: RootState): Quiz[] =>
+  state.quizes.quizes//-------------------------????????????????????????????????????????????????
+
+
+  // чтобы глобально использовать то что мы туда положили
+  // обращаясь в силект мы видим массив квизов
