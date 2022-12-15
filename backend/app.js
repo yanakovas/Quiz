@@ -7,7 +7,7 @@ const app = express();
 expressConfig(app);
 
 // подключаем маршрутизацию
-
+app.use('api/quizes', mainRouter);
 // eslint-disable-next-line prefer-destructuring
 const PORT = process.env.PORT;
 

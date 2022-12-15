@@ -21,6 +21,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       points: {
         type: DataTypes.TEXT,
+        defaultValue: 0,
       },
     },
     {
