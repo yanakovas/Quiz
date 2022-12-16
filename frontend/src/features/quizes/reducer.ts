@@ -1,21 +1,21 @@
-import QuizesState from './types/State';
-import QuizesAction from './types/Action';
+import { TopicsState } from "./types/State";
+import { TopicsAction } from "./types/Action";
 
 // это начальное состояние просто пустой массив
 // делаем для редакса
-const initialState: QuizesState = {
-  quizes: [],
+const initialState: TopicsState = {
+  topics: [],
 };
 
-
-function quizesReducer(
+function topicsReducer(
   // назначаем начальное состояние параметром по-умолчанию
-  state: QuizesState = initialState,
-  action: QuizesAction
-): QuizesState {
+  state: TopicsState = initialState,
+  action: TopicsAction
+): TopicsState {
   switch (action.type) {
-    case 'quizes/loadQuizesSuccess':
-      return { ...state, quizes: action.payload };
+    case "topics/loadTopicsSuccess":
+      //Возвращаем вместо пустого массива массив из action payload
+      return { ...state, topics: action.payload };
 
     // для редакса необходим дефолтный кейс!
     default:
@@ -23,7 +23,6 @@ function quizesReducer(
   }
 }
 
-export default quizesReducer;
-
+export default topicsReducer;
 
 //редюсер чтобы менять стейт где угодно

@@ -1,16 +1,17 @@
-import OneQuizView from '../OneQuizView/OneQuizView';
-import Quiz from '../types/Quiz';
+import OneQuizView from "../OneQuizView/OneQuizView";
+
+import Topic from "../types/Topics";
 
 type TopicPageProps = {
-  quizes: Quiz[];
+  topic: Topic;
 };
 
-function TopicPage({ quizes }: TopicPageProps): JSX.Element {
+function TopicPage({ topic }: TopicPageProps): JSX.Element {
   return (
     <div>
-      <h1>Это страница с игрой</h1>
+      <h1>Темы(топики)</h1>
       <div>
-        {quizes.map((quiz) => (
+        {topic.Quizzes.map((quiz) => (
           <OneQuizView key={quiz.id} quiz={quiz} />
         ))}
       </div>

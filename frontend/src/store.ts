@@ -1,12 +1,12 @@
 // Использование Redux без Redux Toolkit - считается устаревшей практикой
-import { createStore, combineReducers } from 'redux';
-import { composeWithDevTools } from 'redux-devtools-extension';
-import quizesReducer from './features/quizes/reducer';
-import authReducer from './features/auth/reducer';
+import { createStore, combineReducers } from "redux";
+import { composeWithDevTools } from "redux-devtools-extension";
+import topicsReducer from "./features/quizes/reducer";
+import authReducer from "./features/auth/reducer";
 
 const store = createStore(
   combineReducers({
-    quizes: quizesReducer,
+    quizes: topicsReducer,
     auth: authReducer,
   }),
   composeWithDevTools()
@@ -14,5 +14,5 @@ const store = createStore(
 
 export default store;
 
-// тип централизованного состояния
+// тип централизованного состояния копипаста
 export type RootState = ReturnType<typeof store.getState>;
