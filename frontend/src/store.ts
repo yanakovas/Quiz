@@ -1,7 +1,7 @@
 // Использование Redux без Redux Toolkit - считается устаревшей практикой
 import { createStore, combineReducers } from 'redux';
 import { composeWithDevTools } from 'redux-devtools-extension';
-import quizesReducer from './features/game/reducer';
+import quizesReducer from './features/quizes/reducer';
 import authReducer from './features/auth/reducer';
 
 const store = createStore(

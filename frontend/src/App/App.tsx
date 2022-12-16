@@ -1,16 +1,20 @@
-import { useEffect} from 'react';
+import { useEffect } from 'react';
 import { useDispatch } from 'react-redux';
 
 import { Route, Routes } from 'react-router-dom';
-import HomePage from '../features/homePage/HomePage';
-import GamePage from '../features/game/GamePage/GamePage';
+
+import GamePage from '../features/quizes/GamePage/GamePage';
 import LoginPage from '../features/auth/LoginPage';
-import { loadQuizes } from '../features/game/api';
+import { loadQuizes } from '../features/quizes/api';
 import { loadQuizesSuccess } from '../features/actionCreators';
 
 function App(): JSX.Element {
   const dispatch = useDispatch();
 
+
+  // будем использовать юзефект после полной отрисовки вью
+  //НЕ СЕЙЧАС!!!!
+  // аналог аддлистнер
   useEffect(() => {
     loadQuizes().then((data) => {
       dispatch(loadQuizesSuccess(data));
@@ -18,7 +22,7 @@ function App(): JSX.Element {
   }, []);
   return (
     <Routes>
-      <Route path='/' element={<HomePage />} />
+      <Route path='/' element={<GamePage />} />
       <Route path='/game' element={<GamePage />} />
       <Route path='/login' element={<LoginPage />} />
     </Routes>

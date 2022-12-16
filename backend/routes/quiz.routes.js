@@ -13,3 +13,4 @@ mainRouter.get('/', async (req, res) => {
 
   res.json(quizes);
 });
+module.exports = mainRouter;

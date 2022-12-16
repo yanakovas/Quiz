@@ -1,6 +1,7 @@
 require('dotenv').config();
 const express = require('express');
 const expressConfig = require('./config/express');
+const mainRouter = require('./routes/quiz.routes');
 
 const app = express();
 
