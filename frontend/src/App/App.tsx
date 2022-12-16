@@ -17,9 +17,10 @@ function App(): JSX.Element {
   useEffect(() => {
     // в дате массв топиков с инклюдом квизов
     loadTopics().then((data) => {
+
       dispatch(loadTopicsSuccess(data));
     });
-  }, []);
+  }, [dispatch]);
   return (
     <Routes>
       <Route path='/' element={<GamePage />} />
