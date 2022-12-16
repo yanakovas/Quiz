@@ -1,12 +1,12 @@
 // Этот файл отвечает за общение клиента с сервером (фечи)
 
-import Quiz from './types/Quiz';
 
+import Topic from './types/Topics';
 
 // функция загрузки с сервера всех квизов
 
-export async function loadQuizes(): Promise<Quiz[]> {
-  const response = await fetch('/api/quizes');
+export async function loadTopics(): Promise<Topic[]> {
+  const response = await fetch('/api/topics');
   const result = await response.json();
   return result;
 }

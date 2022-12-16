@@ -1,16 +1,16 @@
 const mainRouter = require('express').Router();
-const { Quiz } = require('../db/models');
+const {  Topic } = require('../db/models');
 
 mainRouter.get('/', async (req, res) => {
-  const quizes = await Quiz.findAll({
+  const topics = await Topic.findAll({
     order: [
       ['createdAt', 'DESC'],
       ['id', 'DESC'],
     ],
 
-    include: [Quiz.Topic],
+    include: [Topic.Quizes],
   });
 
-  res.json(quizes);
+  res.json(topics);
 });
 module.exports = mainRouter;

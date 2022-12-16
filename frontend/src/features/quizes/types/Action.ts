@@ -1,9 +1,14 @@
-import Quiz from "./Quiz";
- type QuizesAction={
-    type:'quizes/loadQuizesSuccess';
-    payload:Quiz[];
- }
- export default QuizesAction
+import Quiz from './Quiz';
+import Topic from './Topics';
 
+// export type QuizesAction = {
+//   type: 'quizes/loadQuizesSuccess';
+//   payload: Quiz[];
+// };
 
- //типизация дейсвия со стейтом
+export type TopicsAction = {
+  type: 'topics/loadTopicsSuccess';
+  payload: Topic[];
+};
+
+//типизация дейсвия со стейтом
