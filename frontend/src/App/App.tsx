@@ -11,7 +11,6 @@ import { loadQuizesSuccess } from '../features/actionCreators';
 function App(): JSX.Element {
   const dispatch = useDispatch();
 
-
   // будем использовать юзефект после полной отрисовки вью
   //НЕ СЕЙЧАС!!!!
   // аналог аддлистнер
@@ -22,9 +21,9 @@ function App(): JSX.Element {
   }, []);
   return (
     <Routes>
-      <Route path='/' element={<GamePage />} />
-      <Route path='/game' element={<GamePage />} />
-      <Route path='/login' element={<LoginPage />} />
+      <Route path="/" element={<GamePage />} />
+      <Route path="/game" element={<GamePage />} />
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
   );
 }
