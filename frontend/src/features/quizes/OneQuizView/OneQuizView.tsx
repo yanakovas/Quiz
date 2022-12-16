@@ -5,7 +5,7 @@ type OneQuizViewProps = {
 };
 
 function OneQuizView({ quiz }: OneQuizViewProps): JSX.Element {
-  return <div>{quiz.que_point}</div>;
+  return <div className='quiz'>{quiz.que_point}</div>;
 }
 
 export default OneQuizView;

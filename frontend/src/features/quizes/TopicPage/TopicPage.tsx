@@ -1,6 +1,7 @@
 import OneQuizView from '../OneQuizView/OneQuizView';
 
 import Topic from '../types/Topics';
+import './TopicPage.css'
 
 type TopicPageProps = {
   topic: Topic;
@@ -8,13 +9,13 @@ type TopicPageProps = {
 
 function TopicPage({ topic }: TopicPageProps): JSX.Element {
   return (
-    <div>
-      <h1>Темы(топики)</h1>
-      <div>
+    <div className='all-topics'>
+      <h2>{topic?.title}</h2>
+      <div className='topic'>
         
         {topic?.Quizzes.map((quiz) => (
           // при первой загрузке массив топиков пустой по умолчанию. для этого ставим "?"
-          <OneQuizView key={quiz.id} quiz={quiz} />
+          <a href=""><OneQuizView key={quiz.id} quiz={quiz} /></a>
         ))}
       </div>
     </div>
