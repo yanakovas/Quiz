@@ -1,10 +1,13 @@
-import Quiz from './Quiz';
+// import Quiz from './Quiz';
+import Topic from './Topics';
 
-type QuizesState = {
-  quizes: Quiz[];
+// export type QuizesState = {
+//   quizes: Quiz[];
+// };
+
+export type TopicsState = {
+  topics: Topic[];
 };
-export default QuizesState;
-
 
 // типизация
 // переменная в которую мы кладем чтобы потом использовать везде
