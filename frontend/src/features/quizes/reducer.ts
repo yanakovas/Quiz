@@ -7,7 +7,6 @@ const initialState: QuizesState = {
   quizes: [],
 };
 
-
 function quizesReducer(
   // назначаем начальное состояние параметром по-умолчанию
   state: QuizesState = initialState,
@@ -17,6 +16,9 @@ function quizesReducer(
     case 'quizes/loadQuizesSuccess':
       return { ...state, quizes: action.payload };
 
+    case 'quizes/answerQuestionFailed':
+      return { ...state, quizes: action.payload };
+
     // для редакса необходим дефолтный кейс!
     default:
       return state;
@@ -24,6 +26,5 @@ function quizesReducer(
 }
 
 export default quizesReducer;
-
 
 //редюсер чтобы менять стейт где угодно
