@@ -7,7 +7,7 @@ const initialState: TopicsState = {
   topics: [],
 };
 
-function quizesReducer(
+function topicsReducer(
   // назначаем начальное состояние параметром по-умолчанию
   state: TopicsState = initialState,
   action: TopicsAction
