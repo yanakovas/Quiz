@@ -7,6 +7,7 @@ import GamePage from '../features/quizes/GamePage/GamePage';
 import LoginPage from '../features/auth/LoginPage';
 import { loadTopics } from '../features/quizes/api';
 import { loadTopicsSuccess } from '../features/actionCreators';
+import QuizPage from '../features/quizes/QuizPage/QuizPage';
 
 function App(): JSX.Element {
   const dispatch = useDispatch();
@@ -21,11 +22,12 @@ function App(): JSX.Element {
       dispatch(loadTopicsSuccess(data));
     });
   }, [dispatch]);
+
   return (
     <Routes>
-      <Route path='/' element={<GamePage />} />
-      <Route path='/game' element={<GamePage />} />
-      <Route path='/login' element={<LoginPage />} />
+      <Route path="/" element={<GamePage />} />
+      <Route path="/game/:QuestionId" element={<QuizPage />} />
+      <Route path="/login" element={<LoginPage />} />
     </Routes>
   );
 }

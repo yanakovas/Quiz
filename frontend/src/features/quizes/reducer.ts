@@ -8,6 +8,7 @@ const initialState: TopicsState = {
 };
 
 function topicsReducer(
+
   // назначаем начальное состояние параметром по-умолчанию
   state: TopicsState = initialState,
   action: TopicsAction
@@ -17,12 +18,17 @@ function topicsReducer(
       //Возвращаем вместо пустого массива массив из action payload
       return { ...state, topics: action.payload };
 
+    case 'quizes/answerQuestionFailed':
+      return { ...state, quizes: action.payload };
+
     // для редакса необходим дефолтный кейс!
     default:
       return state;
   }
 }
 
+
 export default topicsReducer;
+
 
 //редюсер чтобы менять стейт где угодно
