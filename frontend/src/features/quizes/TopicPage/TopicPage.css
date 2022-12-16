@@ -1,0 +1,29 @@
+.all-topics {
+  display: flex;
+}
+.topic {
+  display: flex;
+}
+.quiz {
+  width: 100px;
+  height: 100px;
+  background-color: aqua;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid blue;
+  text-decoration: none;
+}
+h2 {
+  width: 200px;
+  height: 100px;
+  background-color: aqua;
+  margin: 0px;
+  border: 2px solid blue;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+a {
+  text-decoration: none;
+}
