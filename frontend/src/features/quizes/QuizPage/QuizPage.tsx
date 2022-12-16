@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate, useParams } from 'react-router-dom';
-import { selectQuizes } from '../selectors';
+import { selectTopics } from '../selectors';
 import Topic from '../types/Topics';
 
 function QuizPage(): JSX.Element {
@@ -13,10 +13,10 @@ function QuizPage(): JSX.Element {
   const navigate = useNavigate();
   const { QuestionId } = useParams();
 
-  const quizes = useSelector(selectQuizes);
+  const quizes = useSelector(selectTopics);
 
-  const handleQuestionAnswer():void {
-    setAnswer(quizes.Quizzes.find( question => question.id === QuestionId)) 
+  const handleQuestionAnswer():void{
+    setAnswer(quizes.find( question => question.id === QuestionId)) 
   }
 
   const handleTextChange = (

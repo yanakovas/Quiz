@@ -20,7 +20,7 @@ function App(): JSX.Element {
     loadTopics().then((data) => {
       dispatch(loadTopicsSuccess(data));
     });
-  }, []);
+  }, [dispatch]);
 
   return (
     <Routes>

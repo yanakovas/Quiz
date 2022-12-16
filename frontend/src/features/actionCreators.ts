@@ -1,5 +1,5 @@
-import QuizesAction, { TopicsAction } from './quizes/types/Action';
-import Quiz from './quizes/types/Quiz';
+import  { TopicsAction } from './quizes/types/Action';
+// import Quiz from './quizes/types/Quiz';
 import Topic from './quizes/types/Topics';
 
 

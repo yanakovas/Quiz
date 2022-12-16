@@ -1,5 +1,5 @@
 const mainRouter = require('express').Router();
-const {  Topic } = require('../db/models');
+const { Topic } = require('../db/models');
 
 mainRouter.get('/', async (req, res) => {
   const topics = await Topic.findAll({
@@ -10,6 +10,8 @@ mainRouter.get('/', async (req, res) => {
 
     include: [Topic.Quizes],
   });
+
+  
 
   res.json(topics);
 });
